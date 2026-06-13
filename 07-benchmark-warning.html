@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentR — Market Benchmark</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <style>
+    .warn-banner {
+      background: #2e0e0e;
+      border: 1px solid #6b2222;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .benchmark-bar-wrap { margin: 1.5rem 0; }
+    .benchmark-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .benchmark-bar {
+      height: 10px;
+      background: var(--border);
+      border-radius: 5px;
+      position: relative;
+    }
+    .benchmark-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      background: var(--red);
+      width: 62%; /* your offer position */
+    }
+    .benchmark-marker {
+      position: absolute;
+      top: -5px;
+      left: 62%;
+      width: 20px; height: 20px;
+      background: var(--gold-light);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    .benchmark-market-line {
+      position: absolute;
+      top: -6px;
+      left: 75%;
+      width: 2px;
+      height: 22px;
+      background: var(--green);
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .risk-stat { text-align: center; padding: 1rem; }
+    .risk-stat .num { font-size: 1.6rem; font-weight: 800; }
+    .risk-stat .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TalentR</div>
+    <div class="nav-links">
+      <a class="nav-link" href="01-home.html">Home</a>
+      <a class="nav-link" href="02-candidate-form.html">Candidates</a>
+      <a class="nav-link active" href="05-employer-dashboard.html">Employers</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:1.5rem;">
+      <a class="btn-outline btn-sm" href="05-employer-dashboard.html">← Dashboard</a>
+      <div>
+        <div class="eyebrow" style="margin:0;">Market Benchmark Warning</div>
+        <div style="font-size:13px; color:var(--muted);">Software Engineer · Kuala Lumpur</div>
+      </div>
+    </div>
+
+    <!-- Warning Banner -->
+    <div class="warn-banner">
+      ⚠ Your current offer of <strong>RM 5,500/month</strong> is 11% below the KL market rate for Software Engineers.
+    </div>
+
+    <!-- Benchmark Visual -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label">Offer vs Market Rate</div>
+
+      <div style="display:flex; gap:2rem; margin-bottom:1rem; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:12px; color:var(--muted);">Your Offer</div>
+          <div style="font-size:1.8rem; font-weight:800; color:var(--red);">RM 5,500</div>
+        </div>
+        <div>
+          <div style="font-size:12px; color:var(--muted);">Market Median</div>
+          <div style="font-size:1.8rem; font-weight:800; color:var(--green);">RM 6,200</div>
+        </div>
+        <div>
+          <div style="font-size:12px; color:var(--muted);">Gap</div>
+          <div style="font-size:1.8rem; font-weight:800; color:var(--gold);">−11%</div>
+        </div>
+      </div>
+
+      <div class="benchmark-bar-wrap">
+        <div class="benchmark-bar-label">
+          <span>RM 4,000</span>
+          <span style="color:var(--green);">Market median · RM 6,200</span>
+          <span>RM 8,000</span>
+        </div>
+        <div class="benchmark-bar">
+          <div class="benchmark-bar-fill"></div>
+          <div class="benchmark-marker"></div>
+          <div class="benchmark-market-line"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:1rem; font-size:12px; margin-top:0.5rem;">
+        <span style="display:flex; align-items:center; gap:6px;">
+          <span style="width:12px; height:12px; background:var(--red); border-radius:50%; display:inline-block;"></span>
+          Your offer
+        </span>
+        <span style="display:flex; align-items:center; gap:6px;">
+          <span style="width:12px; height:12px; background:var(--green); border-radius:50%; display:inline-block;"></span>
+          Market median
+        </span>
+      </div>
+    </div>
+
+    <!-- Risk Stats -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label">Retention Risk at This Offer</div>
+      <div class="risk-grid">
+        <div class="risk-stat card" style="background:var(--card2);">
+          <div class="num" style="color:var(--red);">23%</div>
+          <div class="lbl">Higher 6-month turnover risk</div>
+        </div>
+        <div class="risk-stat card" style="background:var(--card2);">
+          <div class="num" style="color:var(--gold);">4.2×</div>
+          <div class="lbl">Cost of a bad hire vs salary gap</div>
+        </div>
+        <div class="risk-stat card" style="background:var(--card2);">
+          <div class="num" style="color:var(--muted);">67%</div>
+          <div class="lbl">Candidates reject below-market offers</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendation -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label">Recommendation</div>
+      <div class="insight-row">
+        <div class="insight-icon">✦</div>
+        <div class="insight-text">
+          <strong>Adjust offer to RM 6,000 – RM 6,500</strong>
+          <small>Brings you within 0–5% of market rate. Significant retention improvement expected.</small>
+        </div>
+      </div>
+      <div class="insight-row">
+        <div class="insight-icon">🛠</div>
+        <div class="insight-text">
+          <strong>Add non-cash benefits</strong>
+          <small>Remote flexibility, learning budget, or equity can offset a salary gap effectively.</small>
+        </div>
+      </div>
+      <div class="insight-row">
+        <div class="insight-icon">⏱</div>
+        <div class="insight-text">
+          <strong>KIV candidates at higher trajectory</strong>
+          <small>3 candidates are KIV'd and will reconsider if offer improves by Q3.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="btn-gold" href="06-employer-filter.html">View Matched Candidates</a>
+      <a class="btn-outline" href="05-employer-dashboard.html">Back to Dashboard</a>
+    </div>
+
+  </div>
+</body>
+</html>

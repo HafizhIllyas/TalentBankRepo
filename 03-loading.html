@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentR — Analysing</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <style>
+    .loading-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .spinner-ring {
+      width: 64px;
+      height: 64px;
+      border: 4px solid var(--border);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .loading-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .loading-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+      min-width: 280px;
+    }
+
+    .loading-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .loading-step.done     { color: var(--white); }
+    .loading-step.active   { color: var(--gold); }
+
+    .step-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+    .loading-step.done   .step-dot { background: var(--green); }
+    .loading-step.active .step-dot { background: var(--gold); animation: pulse 1s ease-in-out infinite; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TalentR</div>
+    <div class="nav-links">
+      <a class="nav-link" href="01-home.html">Home</a>
+      <a class="nav-link active" href="02-candidate-form.html">Candidates</a>
+      <a class="nav-link" href="05-employer-dashboard.html">Employers</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="loading-wrap">
+
+      <div class="spinner-ring"></div>
+
+      <div>
+        <div class="loading-title">Analysing market data...</div>
+        <div class="loading-sub">Comparing against Talentbank's benchmarking database</div>
+      </div>
+
+      <div class="loading-steps">
+        <div class="loading-step done">
+          <div class="step-dot"></div>
+          Fetching role benchmarks
+        </div>
+        <div class="loading-step done">
+          <div class="step-dot"></div>
+          Applying location adjustment
+        </div>
+        <div class="loading-step active">
+          <div class="step-dot"></div>
+          Calculating skill premiums
+        </div>
+        <div class="loading-step">
+          <div class="step-dot"></div>
+          Generating your salary range
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Auto-redirect to results after 2.5s -->
+  <script>
+    setTimeout(function () {
+      window.location.href = '04-candidate-results.html';
+    }, 2500);
+  </script>
+
+</body>
+</html>

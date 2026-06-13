@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentR — Candidate Form</title>
+  <link rel="stylesheet" href="../css/base.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TalentR</div>
+    <div class="nav-links">
+      <a class="nav-link" href="01-home.html">Home</a>
+      <a class="nav-link active" href="02-candidate-form.html">Candidates</a>
+      <a class="nav-link" href="05-employer-dashboard.html">Employers</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <div class="eyebrow">Fair Pay Engine</div>
+    <h2 class="page-title">Find out what you're actually worth.</h2>
+    <p class="page-sub">Compare your salary against real Malaysian market data.</p>
+
+    <!-- Step Progress -->
+    <div class="step-bar">
+      <div class="step done"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+    </div>
+
+    <div class="card">
+      <div class="grid2">
+
+        <div class="form-group">
+          <label class="form-label">Job Title</label>
+          <select class="form-select">
+            <option value="">Select role...</option>
+            <option>Software Engineer</option>
+            <option>Data Analyst</option>
+            <option>Product Manager</option>
+            <option>UI/UX Designer</option>
+            <option>Marketing Executive</option>
+            <option>HR Executive</option>
+            <option>Business Analyst</option>
+            <option>DevOps Engineer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">State</label>
+          <select class="form-select">
+            <option value="">Select state...</option>
+            <option>Kuala Lumpur</option>
+            <option>Selangor</option>
+            <option>Penang</option>
+            <option>Johor</option>
+            <option>Perak</option>
+            <option>Sabah</option>
+            <option>Sarawak</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Industry</label>
+          <select class="form-select">
+            <option value="">Select industry...</option>
+            <option>Technology</option>
+            <option>Finance</option>
+            <option>Healthcare</option>
+            <option>E-commerce</option>
+            <option>Manufacturing</option>
+            <option>Education</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Current Salary (RM/month)</label>
+          <input type="number" class="form-input" placeholder="e.g. 4500" />
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Years of Experience</label>
+        <div class="range-wrap">
+          <input type="range" min="0" max="15" value="2" step="1"
+            oninput="document.getElementById('expVal').textContent=this.value+'yr'" />
+          <span class="range-val" id="expVal">2yr</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">
+          Your Skills <span class="form-label-hint">(tap to select)</span>
+        </label>
+        <div class="skills-area">
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">Python</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">SQL</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">React</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">Figma</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">Excel</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">Power BI</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">AWS</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">Node.js</span>
+        </div>
+      </div>
+
+      <a class="btn-gold btn-full" href="03-loading.html" style="text-align:center;">
+        Analyse My Market Value →
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleSkill(el) {
+      if (el.classList.contains('tag-gold')) {
+        el.className = 'tag tag-neutral skill-tag';
+      } else {
+        el.className = 'tag tag-gold skill-tag';
+      }
+    }
+  </script>
+</body>
+</html>

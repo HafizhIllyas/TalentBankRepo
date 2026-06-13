@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentR — Filter Candidates</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <style>
+    .match-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .match-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: var(--card2);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border: 1px solid var(--border);
+    }
+    .match-dim { opacity: 0.75; }
+
+    .match-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 14px; color: #0A1D37;
+      flex-shrink: 0;
+    }
+    .match-avatar-outline {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--card2);
+      border: 1.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 14px; color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .match-info        { flex: 1; }
+    .match-info strong { font-size: 14px; color: var(--white); }
+    .match-info small  { color: var(--muted); font-size: 12px; display: block; }
+
+    .match-actions     { text-align: right; }
+    .match-score       { font-size: 13px; font-weight: 700; color: var(--gold); }
+
+    .action-btns {
+      display: flex;
+      gap: 6px;
+      justify-content: flex-end;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TalentR</div>
+    <div class="nav-links">
+      <a class="nav-link" href="01-home.html">Home</a>
+      <a class="nav-link" href="02-candidate-form.html">Candidates</a>
+      <a class="nav-link active" href="05-employer-dashboard.html">Employers</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:1.5rem;">
+      <a class="btn-outline btn-sm" href="05-employer-dashboard.html">← Dashboard</a>
+      <div>
+        <div class="eyebrow" style="margin:0;">Employer Dashboard</div>
+        <div style="font-size:13px; color:var(--muted);">Filter & match candidates</div>
+      </div>
+    </div>
+
+    <!-- Filter Panel -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label" style="margin-bottom:1rem;">Filter Candidates</div>
+      <div class="grid2">
+        <div class="form-group">
+          <label class="form-label">Role</label>
+          <select class="form-select">
+            <option>Software Engineer</option>
+            <option>Data Analyst</option>
+            <option>Product Manager</option>
+            <option>UI/UX Designer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Min. Experience</label>
+          <select class="form-select">
+            <option>1+ years</option>
+            <option>2+ years</option>
+            <option>3+ years</option>
+            <option>5+ years</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Required Skills</label>
+        <div class="skills-area">
+          <span class="tag tag-gold">Python ✓</span>
+          <span class="tag tag-gold">SQL ✓</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">React</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">AWS</span>
+          <span class="tag tag-neutral skill-tag" onclick="toggleSkill(this)">Figma</span>
+        </div>
+      </div>
+      <button class="btn-gold" style="font-size:13px; padding:9px 20px;">Apply Filters</button>
+    </div>
+
+    <!-- Candidate List -->
+    <div class="card">
+      <div class="match-header">
+        <div class="card-label" style="margin:0;">Top Matches</div>
+        <span style="font-size:12px; color:var(--muted);">Ranked by trajectory fit</span>
+      </div>
+
+      <!-- Candidate 1 -->
+      <div class="match-card">
+        <div class="match-avatar">AZ</div>
+        <div class="match-info">
+          <strong>Ahmad Zulkifli</strong>
+          <small>Software Engineer · 3yr · Selangor · Python, SQL, React</small>
+          <div style="margin-top:4px;">
+            <span class="tag tag-up tag-sm">Onboarding risk: Low</span>
+            <span class="tag tag-up tag-sm">Trajectory: ↑ Senior Eng</span>
+          </div>
+        </div>
+        <div class="match-actions">
+          <div class="match-score">94%</div>
+          <div style="font-size:11px; color:var(--muted);">match</div>
+          <div class="action-btns">
+            <button class="btn-gold btn-xs">Invite</button>
+            <button class="btn-outline btn-xs">KIV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidate 2 -->
+      <div class="match-card">
+        <div class="match-avatar-outline">NR</div>
+        <div class="match-info">
+          <strong>Nurul Rashidah</strong>
+          <small>Data Analyst · 2yr · KL · Python, Power BI, SQL</small>
+          <div style="margin-top:4px;">
+            <span class="tag tag-neutral tag-sm">Onboarding risk: Med</span>
+            <span class="tag tag-up tag-sm">Trajectory: ↑ Data Lead</span>
+          </div>
+        </div>
+        <div class="match-actions">
+          <div class="match-score">87%</div>
+          <div style="font-size:11px; color:var(--muted);">match</div>
+          <div class="action-btns">
+            <button class="btn-gold btn-xs">Invite</button>
+            <button class="btn-outline btn-xs">KIV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidate 3 — KIV'd -->
+      <div class="match-card match-dim">
+        <div class="match-avatar-outline">LK</div>
+        <div class="match-info">
+          <strong>Lim Kai Wen</strong>
+          <small>Software Engineer · 1yr · Penang · React, Node.js</small>
+          <div style="margin-top:4px;">
+            <span class="tag tag-down tag-sm">Missing: Python</span>
+            <span class="kiv-badge">KIV'd for Q3</span>
+          </div>
+        </div>
+        <div class="match-actions">
+          <div class="match-score" style="color:var(--muted);">71%</div>
+          <div style="font-size:11px; color:var(--muted);">match</div>
+          <div class="action-btns">
+            <button class="btn-outline btn-xs">Update KIV</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function toggleSkill(el) {
+      if (el.classList.contains('tag-gold')) {
+        el.className = 'tag tag-neutral skill-tag';
+      } else {
+        el.className = 'tag tag-gold skill-tag';
+      }
+    }
+  </script>
+</body>
+</html>

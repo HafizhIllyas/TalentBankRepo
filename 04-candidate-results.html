@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentR — Your Results</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <style>
+    .big-number     { font-size: 2.2rem; font-weight: 800; color: var(--gold); }
+    .big-number-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+    .salary-bar-wrap { margin: 1.5rem 0; }
+    .salary-range-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .salary-bar { height: 8px; background: var(--border); border-radius: 4px; position: relative; }
+    .salary-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--gold);
+      width: 38%; /* below market — adjust to show state */
+    }
+    .salary-marker {
+      position: absolute;
+      top: -4px;
+      left: 38%;
+      width: 16px;
+      height: 16px;
+      background: var(--gold-light);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    .position-text { font-size: 13px; color: var(--muted); margin-top: 0.5rem; }
+
+    .result-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TalentR</div>
+    <div class="nav-links">
+      <a class="nav-link" href="01-home.html">Home</a>
+      <a class="nav-link active" href="02-candidate-form.html">Candidates</a>
+      <a class="nav-link" href="05-employer-dashboard.html">Employers</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- Header -->
+    <div class="result-header">
+      <a class="btn-outline btn-sm" href="02-candidate-form.html">← Back</a>
+      <div>
+        <div class="eyebrow" style="margin:0;">Results · Fair Pay Engine</div>
+        <div style="font-size:13px; color:var(--muted);">Software Engineer · Kuala Lumpur · 3yr exp</div>
+      </div>
+    </div>
+
+    <!-- Step Progress -->
+    <div class="step-bar">
+      <div class="step done"></div>
+      <div class="step done"></div>
+      <div class="step done"></div>
+    </div>
+
+    <!-- Salary Range Card -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label">Your Market Value</div>
+      <div class="big-number">RM 5,100 — RM 7,600 / month</div>
+      <div class="big-number-sub">Your current salary is 18% below market median (RM 6,200)</div>
+
+      <div class="salary-bar-wrap">
+        <div class="salary-range-label">
+          <span>RM 5,100</span>
+          <span class="gold-text">Market median · RM 6,200</span>
+          <span>RM 7,600</span>
+        </div>
+        <div class="salary-bar">
+          <div class="salary-bar-fill"></div>
+          <div class="salary-marker"></div>
+        </div>
+      </div>
+      <div class="position-text">
+        You are earning below the market range — you may have a case to negotiate.
+      </div>
+    </div>
+
+    <!-- Factors + Next Steps -->
+    <div class="grid2" style="margin-bottom:1rem;">
+
+      <div class="card">
+        <div class="card-label">What's moving your number</div>
+
+        <div class="insight-row">
+          <div class="insight-icon">📍</div>
+          <div class="insight-text">
+            <strong>Kuala Lumpur</strong>
+            <small>High-pay market · no location penalty</small>
+          </div>
+        </div>
+
+        <div class="insight-row">
+          <div class="insight-icon">⏱</div>
+          <div class="insight-text">
+            <strong>3 years experience</strong>
+            <small>+RM 540 from experience</small>
+          </div>
+        </div>
+
+        <div class="insight-row">
+          <div class="insight-icon">🛠</div>
+          <div class="insight-text">
+            <strong>2 skills verified</strong>
+            <small>+RM 400 from skills</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <div class="card-label">Your next steps</div>
+
+        <div class="insight-row">
+          <div class="insight-icon">→</div>
+          <div class="insight-text">Learn Python (+RM 400 avg)</div>
+        </div>
+
+        <div class="insight-row">
+          <div class="insight-icon">→</div>
+          <div class="insight-text">Add a cloud skill (+RM 600 avg)</div>
+        </div>
+
+        <div class="insight-row">
+          <div class="insight-icon">→</div>
+          <div class="insight-text">Negotiate using this market data</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Similar Roles -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label">Similar Roles Paying More</div>
+
+      <div class="insight-row">
+        <div class="insight-text" style="flex:1"><strong>Senior Software Engineer</strong></div>
+        <span class="tag tag-gold">RM 9,900/mo</span>
+      </div>
+      <div class="insight-row">
+        <div class="insight-text" style="flex:1"><strong>Software Engineer (KL)</strong></div>
+        <span class="tag tag-gold">RM 6,200/mo</span>
+      </div>
+      <div class="insight-row">
+        <div class="insight-text" style="flex:1"><strong>Lead Software Engineer</strong></div>
+        <span class="tag tag-gold">RM 12,200/mo</span>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="soft-highlight" style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <div style="flex:1; min-width:160px;">
+        <strong>Ready to negotiate?</strong><br>
+        <span style="font-size:12px; font-weight:400;">Employers can KIV your profile for future roles.</span>
+      </div>
+      <a class="btn-gold" href="01-home.html">Create Living Portfolio →</a>
+    </div>
+
+  </div>
+</body>
+</html>

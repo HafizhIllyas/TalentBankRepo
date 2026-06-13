@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentR — Next Steps</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <style>
+    .action-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+    .action-card:hover { border-color: var(--gold); }
+
+    .action-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      background: #2a2000;
+      border: 1px solid #4a3800;
+      border-radius: 6px;
+      padding: 4px 8px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .action-body strong { font-size: 14px; color: var(--white); display: block; margin-bottom: 3px; }
+    .action-body p      { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TalentR</div>
+    <div class="nav-links">
+      <a class="nav-link" href="01-home.html">Home</a>
+      <a class="nav-link active" href="02-candidate-form.html">Candidates</a>
+      <a class="nav-link" href="05-employer-dashboard.html">Employers</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:1.5rem;">
+      <a class="btn-outline btn-sm" href="04-candidate-results.html">← Results</a>
+      <div>
+        <div class="eyebrow" style="margin:0;">What to do next</div>
+        <div style="font-size:13px; color:var(--muted);">Based on your salary analysis</div>
+      </div>
+    </div>
+
+    <!-- Step Progress — all done -->
+    <div class="step-bar">
+      <div class="step done"></div>
+      <div class="step done"></div>
+      <div class="step done"></div>
+    </div>
+
+    <!-- Summary pill -->
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <div style="flex:1;">
+        <div style="font-size:12px; color:var(--muted); margin-bottom:2px;">Your result</div>
+        <div style="font-size:1.1rem; font-weight:800; color:var(--gold);">RM 5,100 — RM 7,600 / month</div>
+        <div style="font-size:12px; color:var(--muted); margin-top:2px;">Software Engineer · KL · 3yr exp</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px; color:var(--muted);">You are currently</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--red);">18% below market</div>
+      </div>
+    </div>
+
+    <!-- Action Steps -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-label" style="margin-bottom:1rem;">Your action plan</div>
+
+      <div class="action-card">
+        <div class="action-num">01</div>
+        <div class="action-body">
+          <strong>Learn Python</strong>
+          <p>The single highest-impact skill for your role. Average salary bump of +RM 400/month in KL. Free resources: freeCodeCamp, Kaggle Learn.</p>
+          <a class="btn-gold" href="#" style="font-size:12px; padding:6px 14px;">Find courses →</a>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="action-num">02</div>
+        <div class="action-body">
+          <strong>Add a cloud certification (AWS or Azure)</strong>
+          <p>Cloud skills add an average of +RM 600/month. AWS Certified Developer is the most requested in Malaysian job posts.</p>
+          <a class="btn-gold" href="#" style="font-size:12px; padding:6px 14px;">Start learning →</a>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="action-num">03</div>
+        <div class="action-body">
+          <strong>Negotiate your current salary</strong>
+          <p>Use your TalentR report as evidence. Market median for your role in KL is RM 6,200 — you have a clear, data-backed case.</p>
+          <a class="btn-outline" href="#" style="font-size:12px; padding:6px 14px;">Get negotiation guide →</a>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="action-num">04</div>
+        <div class="action-body">
+          <strong>Build your Living Portfolio</strong>
+          <p>Let employers find you. A verified, auto-updating portfolio means recruiters see your real skills — not just a static CV.</p>
+          <a class="btn-gold" href="01-home.html" style="font-size:12px; padding:6px 14px;">Create portfolio →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Employer CTA -->
+    <div class="soft-highlight" style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <div style="flex:1; min-width:160px;">
+        <strong>Get discovered by employers</strong><br>
+        <span style="font-size:12px; font-weight:400;">
+          Companies can KIV your profile and reach out when the right role opens.
+        </span>
+      </div>
+      <a class="btn-gold" href="01-home.html">Join the talent pool →</a>
+    </div>
+
+  </div>
+</body>
+</html>
