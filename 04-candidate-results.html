@@ -58,7 +58,7 @@
       <a class="btn-outline btn-sm" href="02-candidate-form.html">← Back</a>
       <div>
         <div class="eyebrow" style="margin:0;">Results · Fair Pay Engine</div>
-        <div style="font-size:13px; color:var(--muted);">Software Engineer · Kuala Lumpur · 3yr exp</div>
+        <div style="font-size:13px; color:var(--muted);" id="resultSubtitle">Software Engineer · Kuala Lumpur · 3yr exp</div>
       </div>
     </div>
 
@@ -72,21 +72,21 @@
     <!-- Salary Range Card -->
     <div class="card" style="margin-bottom:1rem;">
       <div class="card-label">Your Market Value</div>
-      <div class="big-number">RM 5,100 — RM 7,600 / month</div>
-      <div class="big-number-sub">Your current salary is 18% below market median (RM 6,200)</div>
+      <div class="big-number" id="salaryRange">RM 5,100 — RM 7,600 / month</div>
+      <div class="big-number-sub" id="salaryNote">Your current salary is 18% below market median (RM 6,200)</div>
 
       <div class="salary-bar-wrap">
         <div class="salary-range-label">
-          <span>RM 5,100</span>
+          <span id="barMin">RM 5,100</span>
           <span class="gold-text">Market median · RM 6,200</span>
-          <span>RM 7,600</span>
+          <span id="barMax">RM 7,600</span>
         </div>
         <div class="salary-bar">
-          <div class="salary-bar-fill"></div>
-          <div class="salary-marker"></div>
+          <div class="salary-bar-fill" id="barFill"></div>
+          <div class="salary-marker" id="barMarker"></div>
         </div>
       </div>
-      <div class="position-text">
+      <div class="position-text" id="positionText">
         You are earning below the market range — you may have a case to negotiate.
       </div>
     </div>
@@ -96,51 +96,47 @@
 
       <div class="card">
         <div class="card-label">What's moving your number</div>
-
-        <div class="insight-row">
-          <div class="insight-icon">📍</div>
-          <div class="insight-text">
-            <strong>Kuala Lumpur</strong>
-            <small>High-pay market · no location penalty</small>
+        <div id="factorsList">
+          <div class="insight-row">
+            <div class="insight-icon">📍</div>
+            <div class="insight-text">
+              <strong>Kuala Lumpur</strong>
+              <small>High-pay market · no location penalty</small>
+            </div>
+          </div>
+          <div class="insight-row">
+            <div class="insight-icon">⏱</div>
+            <div class="insight-text">
+              <strong>3 years experience</strong>
+              <small>+RM 540 from experience</small>
+            </div>
+          </div>
+          <div class="insight-row">
+            <div class="insight-icon">🛠</div>
+            <div class="insight-text">
+              <strong>2 skills verified</strong>
+              <small>+RM 400 from skills</small>
+            </div>
           </div>
         </div>
-
-        <div class="insight-row">
-          <div class="insight-icon">⏱</div>
-          <div class="insight-text">
-            <strong>3 years experience</strong>
-            <small>+RM 540 from experience</small>
-          </div>
-        </div>
-
-        <div class="insight-row">
-          <div class="insight-icon">🛠</div>
-          <div class="insight-text">
-            <strong>2 skills verified</strong>
-            <small>+RM 400 from skills</small>
-          </div>
-        </div>
-
       </div>
 
       <div class="card">
         <div class="card-label">Your next steps</div>
-
-        <div class="insight-row">
-          <div class="insight-icon">→</div>
-          <div class="insight-text">Learn Python (+RM 400 avg)</div>
+        <div id="nextStepsList">
+          <div class="insight-row">
+            <div class="insight-icon">→</div>
+            <div class="insight-text">Learn Python (+RM 400 avg)</div>
+          </div>
+          <div class="insight-row">
+            <div class="insight-icon">→</div>
+            <div class="insight-text">Add a cloud skill (+RM 600 avg)</div>
+          </div>
+          <div class="insight-row">
+            <div class="insight-icon">→</div>
+            <div class="insight-text">Negotiate using this market data</div>
+          </div>
         </div>
-
-        <div class="insight-row">
-          <div class="insight-icon">→</div>
-          <div class="insight-text">Add a cloud skill (+RM 600 avg)</div>
-        </div>
-
-        <div class="insight-row">
-          <div class="insight-icon">→</div>
-          <div class="insight-text">Negotiate using this market data</div>
-        </div>
-
       </div>
 
     </div>
@@ -148,18 +144,19 @@
     <!-- Similar Roles -->
     <div class="card" style="margin-bottom:1rem;">
       <div class="card-label">Similar Roles Paying More</div>
-
-      <div class="insight-row">
-        <div class="insight-text" style="flex:1"><strong>Senior Software Engineer</strong></div>
-        <span class="tag tag-gold">RM 9,900/mo</span>
-      </div>
-      <div class="insight-row">
-        <div class="insight-text" style="flex:1"><strong>Software Engineer (KL)</strong></div>
-        <span class="tag tag-gold">RM 6,200/mo</span>
-      </div>
-      <div class="insight-row">
-        <div class="insight-text" style="flex:1"><strong>Lead Software Engineer</strong></div>
-        <span class="tag tag-gold">RM 12,200/mo</span>
+      <div id="similarRoles">
+        <div class="insight-row">
+          <div class="insight-text" style="flex:1"><strong>Senior Software Engineer</strong></div>
+          <span class="tag tag-gold">RM 9,900/mo</span>
+        </div>
+        <div class="insight-row">
+          <div class="insight-text" style="flex:1"><strong>Software Engineer (KL)</strong></div>
+          <span class="tag tag-gold">RM 6,200/mo</span>
+        </div>
+        <div class="insight-row">
+          <div class="insight-text" style="flex:1"><strong>Lead Software Engineer</strong></div>
+          <span class="tag tag-gold">RM 12,200/mo</span>
+        </div>
       </div>
     </div>
 

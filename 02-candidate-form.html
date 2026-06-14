@@ -35,7 +35,7 @@
 
         <div class="form-group">
           <label class="form-label">Job Title</label>
-          <select class="form-select">
+          <select class="form-select" id="jobTitle">
             <option value="">Select role...</option>
             <option>Software Engineer</option>
             <option>Data Analyst</option>
@@ -50,7 +50,7 @@
 
         <div class="form-group">
           <label class="form-label">State</label>
-          <select class="form-select">
+          <select class="form-select" id="state">
             <option value="">Select state...</option>
             <option>Kuala Lumpur</option>
             <option>Selangor</option>
@@ -64,7 +64,7 @@
 
         <div class="form-group">
           <label class="form-label">Industry</label>
-          <select class="form-select">
+          <select class="form-select" id="industry">
             <option value="">Select industry...</option>
             <option>Technology</option>
             <option>Finance</option>
@@ -77,7 +77,7 @@
 
         <div class="form-group">
           <label class="form-label">Current Salary (RM/month)</label>
-          <input type="number" class="form-input" placeholder="e.g. 4500" />
+          <input type="number" class="form-input" id="currentSalary" placeholder="e.g. 4500" />
         </div>
 
       </div>
@@ -85,7 +85,7 @@
       <div class="form-group">
         <label class="form-label">Years of Experience</label>
         <div class="range-wrap">
-          <input type="range" min="0" max="15" value="2" step="1"
+          <input type="range" min="0" max="15" value="2" step="1" id="expRange"
             oninput="document.getElementById('expVal').textContent=this.value+'yr'" />
           <span class="range-val" id="expVal">2yr</span>
         </div>
